@@ -1,0 +1,90 @@
+:root {
+  --text-color: hsl(193, 38%, 86%);
+  --green: hsl(150, 100%, 66%);
+  --body-bg: hsl(218, 23%, 16%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  background-color: hsl(217, 19%, 24%);
+  width: 600px;
+  max-width: 80%;
+  height: 340px;
+  border-radius: 22px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.container p {
+  color: var(--green);
+  margin: 20px 0;
+  letter-spacing: 4px;
+}
+
+.container h1 {
+  color: var(--text-color);
+  margin-bottom: 35px;
+  font-size: 27px;
+}
+.container .controlling img {
+  max-width: 100%;
+  margin: 20px auto;
+}
+.container .change-advice {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 35px);
+  z-index: 10000;
+  border: none;
+  outline: none;
+  background-color: var(--green);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.container .change-advice:hover {
+  box-shadow: 0 0 23px 5px var(--green);
+}
+@media (max-width: 486px) {
+  .container h1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 991px) {
+  .desk {
+    display: block !important;
+  }
+  .mob {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .desk {
+    display: none !important;
+  }
+  .mob {
+    display: block !important;
+  }
+}
