@@ -3,11 +3,6 @@ let advice_id = document.getElementById("id");
 let quate = document.getElementById("q");
 let changeAdvice = document.querySelector(".change-advice");
 
-fetchingAdvice();
-
-changeAdvice.addEventListener("click", (e) => {
-  fetchingAdvice();
-});
 
 async function fetchingAdvice() {
   await fetch(api_link)
@@ -17,3 +12,7 @@ async function fetchingAdvice() {
       quate.innerHTML = data.slip.advice;
     });
 }
+
+
+window.onload = fetchingAdvice();
+changeAdvice.addEventListener("click", fetchingAdvice)
